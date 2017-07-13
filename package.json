@@ -8,7 +8,7 @@
     "nwb": "./lib/bin/nwb.js"
   },
   "scripts": {
-    "build": "npm run flow && npm run lint && rimraf lib && babel src --out-dir lib --quiet",
+    "build": "npm run flow && rimraf lib && babel src --out-dir lib --quiet",
     "build:watch": "rimraf lib && babel src --watch --out-dir lib",
     "flow": "flow",
     "lint": "eslint *.js src tests",
@@ -45,7 +45,6 @@
     "run-series": "1.1.4",
     "semver": "5.3.0",
     "webpack-merge": "4.1.0",
-
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
     "babel-plugin-add-module-exports": "0.2.1",
@@ -75,7 +74,6 @@
     "react-transform-catch-errors": "1.0.2",
     "react-transform-hmr": "1.0.4",
     "redbox-noreact": "1.1.0",
-
     "karma": "1.7.0",
     "diff": "3.3.0",
     "karma-chrome-launcher": "2.2.0",
@@ -86,14 +84,11 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.4",
     "phantomjs-prebuilt": "2.1.14",
-
     "mocha": "3.4.2",
     "expect": "1.20.2",
-
     "object-assign": "4.1.1",
     "promise": "8.0.0",
     "whatwg-fetch": "2.0.3",
-
     "webpack": "3.2.0",
     "autoprefixer": "7.1.2",
     "babel-loader": "7.1.1",
@@ -113,8 +108,10 @@
     "webpack-hot-middleware": "2.18.2"
   },
   "devDependencies": {
-    "babel-preset-env": "1.6.0",
-    "babel-preset-flow": "6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
     "cross-env": "5.0.1",
     "eslint-config-jonnybuchanan": "5.0.0",
     "eventsource": "1.0.4",
@@ -139,12 +136,15 @@
   "babel": {
     "presets": [
       "flow",
-      ["env", {
-        "loose": true,
-        "targets": {
-          "node": 4
+      [
+        "env",
+        {
+          "loose": true,
+          "targets": {
+            "node": 4
+          }
         }
-      }],
+      ],
       "stage-2"
     ],
     "plugins": [
@@ -153,9 +153,12 @@
     "env": {
       "test": {
         "plugins": [
-          ["istanbul", {
-            "include": "src"
-          }]
+          [
+            "istanbul",
+            {
+              "include": "src"
+            }
+          ]
         ]
       }
     }
