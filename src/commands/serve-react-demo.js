@@ -25,7 +25,7 @@ export default function serveReactDemo(args, cb) {
     plugins: {
       html: {
         mountId: 'demo',
-        title: `${pkg.name} ${pkg.version} Demo`,
+        title: `${pkg.name} ${pkg.version}`,
       },
     },
   }
